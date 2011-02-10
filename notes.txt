@@ -1,0 +1,19 @@
+
+I need to think about the design more, thought I think some stuff is figured out enough.
+
+It's pretty clear to me that if you're going to store guitars, you've got make, model, serial number.  
+So, guitar table has a sid, and FKs to make, model.  Serial should exist specific to that guitar, as should year of manufacture.
+
+Don't forget scale length.  Should be attached to model.  Should make chain through model?  Fender strats vs. other strats, 
+Gibson vs. Epiphone Les Pauls.
+
+Strings also have manufacturers, and I guess there's models.  Material, purpose (acoustic, say).  I mean, taking it to the extreme, 
+you could break down each pack into a number of strings, each string is of a certain end, a gauge, a material, and where it matches in the set.
+
+So, a set sid connects many-to-many with string-sids, with string number in that set put in the match.
+
+Though, this leaves things a bit odd, because not all strings are constructed the same way, or of the same material.
+
+Which makes keeping the string library sorted a little tricky, but not as much as it might be, depending.
+
+So, each pack is a set, which is defined by a number of strings in the pack,    
