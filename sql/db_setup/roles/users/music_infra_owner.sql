@@ -1,4 +1,4 @@
--- User/login role: guitarconf_owner
+-- User/login role: music_infra_owner
 -- The DB owner role.  Will be the only user who can create the 
 -- DB, or new roles.
 --
