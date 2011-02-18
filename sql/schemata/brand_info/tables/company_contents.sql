@@ -1,0 +1,131 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Started on 2011-02-18 14:49:37 EST
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
+SET search_path = brand_info, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 1511 (class 1259 OID 16475)
+-- Dependencies: 7
+-- Name: company; Type: TABLE; Schema: brand_info; Owner: music_infra_owner; Tablespace: 
+--
+
+CREATE TABLE company (
+    sid integer NOT NULL,
+    company_name character varying(500) NOT NULL,
+    website_sid integer
+);
+
+
+ALTER TABLE brand_info.company OWNER TO music_infra_owner;
+
+--
+-- TOC entry 1510 (class 1259 OID 16473)
+-- Dependencies: 1511 7
+-- Name: company_sid_seq; Type: SEQUENCE; Schema: brand_info; Owner: music_infra_owner
+--
+
+CREATE SEQUENCE company_sid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE brand_info.company_sid_seq OWNER TO music_infra_owner;
+
+--
+-- TOC entry 1805 (class 0 OID 0)
+-- Dependencies: 1510
+-- Name: company_sid_seq; Type: SEQUENCE OWNED BY; Schema: brand_info; Owner: music_infra_owner
+--
+
+ALTER SEQUENCE company_sid_seq OWNED BY company.sid;
+
+
+--
+-- TOC entry 1806 (class 0 OID 0)
+-- Dependencies: 1510
+-- Name: company_sid_seq; Type: SEQUENCE SET; Schema: brand_info; Owner: music_infra_owner
+--
+
+SELECT pg_catalog.setval('company_sid_seq', 2, true);
+
+
+--
+-- TOC entry 1796 (class 2604 OID 16478)
+-- Dependencies: 1511 1510 1511
+-- Name: sid; Type: DEFAULT; Schema: brand_info; Owner: music_infra_owner
+--
+
+ALTER TABLE company ALTER COLUMN sid SET DEFAULT nextval('company_sid_seq'::regclass);
+
+
+--
+-- TOC entry 1802 (class 0 OID 16475)
+-- Dependencies: 1511
+-- Data for Name: company; Type: TABLE DATA; Schema: brand_info; Owner: music_infra_owner
+--
+
+INSERT INTO company (sid, company_name, website_sid) VALUES (1, 'DR HANDMADE STRINGS, Inc.', 2);
+INSERT INTO company (sid, company_name, website_sid) VALUES (2, 'W.L. Gore & Associates, Inc.', NULL);
+
+
+--
+-- TOC entry 1798 (class 2606 OID 16480)
+-- Dependencies: 1511 1511
+-- Name: company_pkey; Type: CONSTRAINT; Schema: brand_info; Owner: music_infra_owner; Tablespace: 
+--
+
+ALTER TABLE ONLY company
+    ADD CONSTRAINT company_pkey PRIMARY KEY (sid);
+
+
+--
+-- TOC entry 1799 (class 1259 OID 16497)
+-- Dependencies: 1511
+-- Name: company_pkey_index; Type: INDEX; Schema: brand_info; Owner: music_infra_owner; Tablespace: 
+--
+
+CREATE UNIQUE INDEX company_pkey_index ON company USING btree (sid);
+
+
+--
+-- TOC entry 1800 (class 1259 OID 16503)
+-- Dependencies: 1511
+-- Name: fki_company_website; Type: INDEX; Schema: brand_info; Owner: music_infra_owner; Tablespace: 
+--
+
+CREATE INDEX fki_company_website ON company USING btree (website_sid);
+
+
+--
+-- TOC entry 1801 (class 2606 OID 16498)
+-- Dependencies: 1511 1513
+-- Name: company_website_fkey; Type: FK CONSTRAINT; Schema: brand_info; Owner: music_infra_owner
+--
+
+ALTER TABLE ONLY company
+    ADD CONSTRAINT company_website_fkey FOREIGN KEY (website_sid) REFERENCES website(sid);
+
+
+-- Completed on 2011-02-18 14:49:37 EST
+
+--
+-- PostgreSQL database dump complete
+--
+
