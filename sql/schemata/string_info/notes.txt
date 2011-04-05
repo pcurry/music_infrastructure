@@ -1,0 +1,16 @@
+Some string info thoughts to implement.
+
+* Strings can be made of many types of material.  Each string might have more than one type of material in its construction.
+
+* Strings can be wound, which will give them several wire sub-components, which might be of differing diameter and material.
+   - but do we want to track this?  Do we care?  Is this outside the scope of the database?
+        * We care if we are collectors.
+
+* String coatings - Elixir strings being the most common.  Property of the string, or the set it's in?
+
+* Expected pitch of a string of a specific gauge is a function of the set it's in, rather than the string itself.
+
+* String ends can probably be enumerated, though a table isn't the worst idea - it will just be pretty static.
+    -  Ball ends, bullet ends, double ball ends, double bullet ends, color-coded ball ends.
+
+
