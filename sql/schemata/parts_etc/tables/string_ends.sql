@@ -1,6 +1,6 @@
-﻿-- Table: parts_etc.string_diameter
+﻿-- Table: parts_etc.string_ends
 
--- DROP TABLE parts_etc.string_diameter;
+-- DROP TABLE parts_etc.string_ends;
 
 CREATE TABLE parts_etc.string_ends
 (
