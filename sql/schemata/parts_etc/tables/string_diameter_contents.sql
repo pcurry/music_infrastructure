@@ -11,12 +11,12 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET escape_string_warning = off;
 
-SET search_path = string_info, pg_catalog;
+SET search_path = parts_etc, pg_catalog;
 
 --
 -- TOC entry 1802 (class 0 OID 0)
 -- Dependencies: 1517
--- Name: string_diameter_sid_seq; Type: SEQUENCE SET; Schema: string_info; Owner: music_infra_owner
+-- Name: string_diameter_sid_seq; Type: SEQUENCE SET; Schema: parts_etc; Owner: music_infra_owner
 --
 
 SELECT pg_catalog.setval('string_diameter_sid_seq', 13, true);
@@ -25,7 +25,7 @@ SELECT pg_catalog.setval('string_diameter_sid_seq', 13, true);
 --
 -- TOC entry 1799 (class 0 OID 16532)
 -- Dependencies: 1518
--- Data for Name: string_diameter; Type: TABLE DATA; Schema: string_info; Owner: music_infra_owner
+-- Data for Name: string_diameter; Type: TABLE DATA; Schema: parts_etc; Owner: music_infra_owner
 --
 
 INSERT INTO string_diameter (sid, in_inches, in_mm) VALUES (1, 0.009000, 0.230000);

@@ -1,8 +1,8 @@
-﻿-- Table: string_info.make_model
+﻿-- Table: parts_etc.make_model
 
--- DROP TABLE string_info.make_model;
+-- DROP TABLE parts_etc.make_model;
 
-CREATE TABLE string_info.make_model
+CREATE TABLE parts_etc.make_model
 (
   sid serial NOT NULL,
   brand_sid integer,
@@ -14,4 +14,4 @@ CREATE TABLE string_info.make_model
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE string_info.make_model OWNER TO music_infra_owner;
+ALTER TABLE parts_etc.make_model OWNER TO music_infra_owner;

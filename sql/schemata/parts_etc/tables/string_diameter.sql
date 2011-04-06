@@ -1,8 +1,8 @@
-﻿-- Table: string_info.string_diameter
+﻿-- Table: parts_etc.string_diameter
 
--- DROP TABLE string_info.string_diameter;
+-- DROP TABLE parts_etc.string_diameter;
 
-CREATE TABLE string_info.string_diameter
+CREATE TABLE parts_etc.string_diameter
 (
   sid serial NOT NULL,
   in_inches numeric(8,6) NOT NULL,
@@ -12,4 +12,4 @@ CREATE TABLE string_info.string_diameter
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE string_info.string_diameter OWNER TO music_infra_owner;
+ALTER TABLE parts_etc.string_diameter OWNER TO music_infra_owner;
