@@ -1,0 +1,32 @@
+
+Music Infrastructure:  A database-backed system for tracking all your kit.
+Paul Curry, pcurry@gmail.com
+
+This is the beginning of a system to track the state of my musical
+instruments, their configuration, and their related gear & such.  I
+started on it when I realized I didn't remember how recently I had
+changed the strings on any of my guitars, let alone their current  
+set up: string gauges, action, string brand, etc.  I decided I needed
+a database to track all of these things, so I started writing one up.
+I started with the database because I like doing relational databases.
+
+This project is currently just the SQL to generate users, schemata,
+and some tables.  That can all be found under ./sql, with descriptive
+directory names.  I've done some directory renaming, and schema
+redesign, which you can see in the logs.
+
+The SQL as written uses PostgreSQL features like the SERIAL type.  I'm
+working on targetting PostgreSQL 8.x for my DB platform.  I may make
+it more standard in the future, and anyone who would like to fork this
+to run on MySQL or what have you, please feel free to do so.  Please
+either split the MySQL or what-have-you-specific SQL off into another
+directory, or write the code standard enough that it is still
+deployable to PostgreSQL.  Thanks!
+
+
+TODO:
+* Design & implement tables to hold abstract instrument data.
+* Develop guitar & bass specific tables.
+* Figure out how to represent instrument configurations, including
+  ones I have used, as well as the current configuration.
+* Load known existing instrument configurations into the DB.
