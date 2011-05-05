@@ -1,0 +1,13 @@
+* Schemata
+** TODO Amplifiers
+** TODO Effects pedals/units
+* Tables
+** TODO Guitar table
+** TODO Bass table
+** TODO Stringed Instrument
+** TODO 
+* Procedures
+**
+* Queries
+**
+* UI
